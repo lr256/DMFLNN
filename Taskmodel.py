@@ -5,7 +5,7 @@ import numpy as np
 import torch.nn as nn
 from termcolor import colored
 from PrintAndPlot import TaskClassificationAnswer
-from InceptionResNetV2 import InceptionResNetV2,,InceptionResNetV2_us_cdfi,BasicConvolution2D
+from DMFLNN import InceptionResNetV2,DMFLNN,BasicConvolution2D
 from StatisticsUtils import ClassificationMetrics, BinaryClassificationMetric
 from MachineLearningModel import MachineLearningModel, EvaluateMachineLearningModel
 import time
@@ -23,7 +23,7 @@ class TaskModel(MachineLearningModel):
             self.Net = InceptionResNetV2(numOfClasses=numclass)
             self.Net.Convolution1A = BasicConvolution2D(3, 32, kernelSize=3, stride=2)
         else:
-            self.Net = InceptionResNetV2_us_cdfi(numOfClasses=numclass)
+            self.Net = DMFLNN(numOfClasses=numclass)
 
         self.LossFunction = nn.CrossEntropyLoss()
 

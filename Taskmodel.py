@@ -162,9 +162,9 @@ if __name__ == "__main__":
     parser.add_argument("--SaveFolderPath", help = "define the save folder path", type = str)
     parser.add_argument("--Name", help = "define the name", type = str)
     args = parser.parse_args()
-    args.TrainFolderPath = "/media/lr/images"  # train
+    args.TrainFolderPath = "/images"  # train
     args.TrainInfoPath = "./train.xlsx"#
-    args.TestFolderPath = "/media/lr/images"   # test
+    args.TestFolderPath = "/images"   # test
     args.TestInfoPath = "./test.xlsx"#
     args.SaveFolderPath = "./save_model"
     args.Name = "Lymph_Inv2_B_C" + time.strftime("%Y-%m-%d %H.%M.%S",time.localtime())  # _getroi_lastliner
